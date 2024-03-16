@@ -1,0 +1,15 @@
+AutoVP train for source model
+
+VP Training with Specified Setting: python demo.py --dataset "CIFAR10" --datapath "./cifar10" --download 1 --pretrained "resnet18" --mapping_method "frequency_based_mapping" --out_map_num 10 --img_scale 1.5 --lr 0.001 --epoch 100
+
+Hyper-Parameter Tuning and VP Training:python demo.py --dataset "CIFAR10" --datapath "./cifar10" --download 1 --param_tune 1
+
+Baseline Evaluation:python Baseline.py --dataset "CIFAR10" --datapath "./cifar10" --download 1 --pretrained "resnet18" --baseline "Scartch" --lr 0.001 --epoch 100 # CLIP_TP, CLIP_LP not support resnet18
+
+Evaluate on the Previous Checkpoint:python Evaluation.py --dataset "CIFAR10" --datapath "./cifar10" --download 1
+
+Three class: 2,3,6
+Source model: RESNET18, imageNet
+Target dataset: CIFAR10
+Accuracy of the reprogrammed model on the CIFAR10 dataset: ACC: 87.61%%
+Reference: https://github.com/jonathanyeetmon/Adversarial-Reprogramming-of-Neural-Networks/tree/main?tab=readme-ov-file#adversarial-reprogramming-of-neural-networks
